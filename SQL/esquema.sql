@@ -34,14 +34,14 @@ CREATE TABLE Evento_esportivo (
 
 CREATE TABLE Transmissao (
     numero_transmissao SERIAL PRIMARY KEY,
-    data_hora_inicio TIMESTAMP,
+    horario_inicio TIMESTAMP,
     duracao INT,
     qualidade VARCHAR(15),
     nome_esporte VARCHAR(20) NOT NULL,
     nome_evento VARCHAR(50) NOT NULL,
-    data_hora_evento TIMESTAMP NOT NULL,
+    horario_evento TIMESTAMP NOT NULL,
     CONSTRAINT fk_transmissao_esporte FOREIGN KEY (nome_esporte) REFERENCES Esporte(nome_esporte),
-    CONSTRAINT fk_transmissao_evento FOREIGN KEY (nome_evento, data_hora_evento) REFERENCES Evento_esportivo(nome_evento, data_hora)
+    CONSTRAINT fk_transmissao_evento FOREIGN KEY (nome_evento, horario_evento) REFERENCES Evento_esportivo(nome_evento, data_hora)
 );
 
 CREATE TABLE Anuncio (
