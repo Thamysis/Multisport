@@ -1,5 +1,4 @@
 -- 1. Inserir dados na tabela Localizacao com IDs automáticos gerados (usando SERIAL)
--- O PostgreSQL vai gerar automaticamente os IDs para as localizações.
 INSERT INTO Localizacao (id_localizacao, cidade, estado, pais)
 VALUES 
     (34245677, 'São Paulo', 'São Paulo', 'Brasil'),
@@ -12,6 +11,7 @@ VALUES
     ('user98765432@email.com', 'Bruno Costa', '1985-08-20', 'premium'),
 	('admin98765432@email.com', 'Denis Silva', '1985-08-20', 'admin'),
 	('admin34245689@email.com', 'Maria Santos', '1985-08-20', 'admin'),
+	('joao.silva@email.com', 'João Silva', '1992-03-10', 'comum'),
     ('user12345678@email.com', 'Carla Mendes', '1992-03-10', 'comum');
 
 -- 3. Inserir dados na tabela Esporte
@@ -35,6 +35,12 @@ VALUES
     ('Campeonato Nacional de Vôlei', '2024-12-01 14:00:00', 'Ginásio do Ibirapuera'),
     ('Copa Regional de Handebol', '2024-12-02 15:00:00', 'Maracanãzinho');
 
+INSERT INTO Evento_esportivo (nome_evento, data_hora, nome_instalacao)
+VALUES 
+	('Copa de Santos de Handebol', '2024-12-22 15:00:00', 'Maracanãzinho'),
+	('Copa de Campinas de Handebol', '2025-11-23 15:00:00', 'Maracanãzinho'),
+	('Copa de Araraquara de Handebol', '2025-10-15 15:00:00', 'Maracanãzinho');
+
 -- 6. Inserir dados na tabela Transmissao com números longos para transmissões
 INSERT INTO Transmissao (numero_transmissao, horario_inicio, duracao, qualidade, nome_esporte, nome_evento, horario_evento)
 VALUES 
@@ -50,7 +56,9 @@ VALUES
 -- 8. Inserir dados na tabela Transmissao_Usuario com números longos para transmissões e e-mails
 INSERT INTO Transmissao_Usuario (numero_transmissao, email_usuario)
 VALUES 
-    (34245689, 'user34245689@email.com'),
+    (34245689, 'joao.silva@email.com'),
+    (98765432, 'joao.silva@email.com'),
+	(34245689, 'user34245689@email.com'),
     (98765432, 'user34245689@email.com'),
     (34245689, 'user98765432@email.com'),
     (98765432, 'user98765432@email.com'),
@@ -113,3 +121,25 @@ VALUES
     ('Handebol', 98765432),
     ('Esportes', 34245689),
     ('Esportes', 98765432);
+
+INSERT INTO Esporte (nome_esporte, popularidade, categoria)
+VALUES 
+    ('Futebol', 1, 'Outdoor');
+
+
+	
+INSERT INTO Transmissao (numero_transmissao, horario_inicio, duracao, qualidade, nome_esporte, nome_evento, horario_evento)
+VALUES 
+    (34247689,'2024-12-01 14:00:00', 120, '1080p', 'Handebol', 'Copa de Santos de Handebol', '2024-12-22 15:00:00'),
+	(34247681,'2024-12-01 14:00:00', 120, '1080p', 'Handebol', 'Copa de Santos de Handebol', '2024-12-22 15:00:00'),
+	(34247682,'2024-12-01 14:00:00', 120, '1080p', 'Handebol', 'Copa de Campinas de Handebol', '2025-11-23 15:00:00');
+
+INSERT INTO Time (nome_time)
+VALUES 
+    ('Praia Clube'),
+    ('Unopar');
+
+INSERT INTO Evento_time (nome_time, nome_evento, data_hora)
+VALUES 
+    ('Unopar', 'Copa de Araraquara de Handebol', '2025-10-15 15:00:00'),
+    ('Praia Clube', 'Copa de Campinas de Handebol', '2025-11-23 15:00:00');

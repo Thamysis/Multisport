@@ -2,7 +2,8 @@ CREATE TABLE Usuario (
     email VARCHAR(255) PRIMARY KEY,
     nome VARCHAR(255),
     data_nascimento DATE,
-    tipo_conta VARCHAR(50) NOT NULL
+    tipo_conta VARCHAR(50) NOT NULL,
+    CHECK (tipo_conta IN ('comum', 'premium', 'admin'))
 );
 
 CREATE TABLE Esporte (
