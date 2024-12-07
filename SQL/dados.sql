@@ -143,3 +143,9 @@ INSERT INTO Evento_time (nome_time, nome_evento, data_hora)
 VALUES 
     ('Unopar', 'Copa de Araraquara de Handebol', '2025-10-15 15:00:00'),
     ('Praia Clube', 'Copa de Campinas de Handebol', '2025-11-23 15:00:00');
+
+INSERT INTO Transmissao_Usuario (numero_transmissao, email_usuario)
+VALUES 
+    (34247682, 'joao.silva@email.com'),
+    (34247681, 'joao.silva@email.com'),
+	(34247689, 'joao.silva@email.com');
